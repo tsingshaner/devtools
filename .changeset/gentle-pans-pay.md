@@ -1,5 +1,5 @@
 ---
-"@qingshaner/devtools": minor
+"@qingshaner/devtools": patch
 ---
 
 - Publish reusable Biome, CSpell, and TypeScript configurations.
