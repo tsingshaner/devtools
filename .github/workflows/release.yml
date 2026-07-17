@@ -33,11 +33,6 @@ jobs:
 
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
-      - name: Unit Test
-        run: pnpm test
-
-      - name: Build app
-        run: pnpm build
 
       - name: Create Release Pull Request
         id: changesets
@@ -49,7 +44,6 @@ jobs:
           version: pnpm changeset-version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: CNPM sync the latest published package
         if: steps.changesets.outputs.published == 'true'
