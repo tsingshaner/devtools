@@ -1,5 +1,12 @@
 # @qingshaner/devtools
 
+## 0.0.3
+
+### Patch Changes
+
+- be56090: - Simplify release automation by removing redundant CI, coverage, test, and build steps.
+  - Stop passing the unused npm token during publishing.
+
 ## 0.0.2
 
 ### Patch Changes
