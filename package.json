@@ -3,10 +3,10 @@
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@11.0.6",
-  "description": "a lib template for typescript",
+  "description": "Devtools for qingshaner",
   "author": {
     "name": "qingshaner",
-    "url": "https://github.com/Jon-a-than"
+    "url": "https://github.com/tsingshaner/devtools"
   },
   "license": "ISC",
   "exports": {
