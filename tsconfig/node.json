@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "rootDir": "..",
+    "target": "ESNext",
+    "types": ["node"]
+  },
+  "extends": "./base.json",
+  "include": ["../*.config.ts"]
+}

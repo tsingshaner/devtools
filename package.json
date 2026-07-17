@@ -12,12 +12,14 @@
   "exports": {
     "./biome": "./biome.shared.json",
     "./cspell": "./cspell.yaml",
-    "./config": "./.config"
+    "./tsconfig/base.json": "./tsconfig/base.json",
+    "./tsconfig/node.json": "./tsconfig/node.json",
+    "./tsconfig/app.json": "./tsconfig/app.json"
   },
   "files": [
     "biome.shared.json",
     "cspell.yaml",
-    ".config"
+    "tsconfig"
   ],
   "engines": {
     "node": ">=22.0.0",
