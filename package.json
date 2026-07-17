@@ -1,5 +1,5 @@
 {
-  "name": "template",
+  "name": "@qingshaner/devtools",
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@11.0.6",
@@ -10,16 +10,14 @@
   },
   "license": "ISC",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
-    }
+    "./biome": "./biome.shared.json",
+    "./cspell": "./cspell.yaml",
+    "./config": "./.config"
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "biome.shared.json",
+    "cspell.yaml",
+    ".config"
   ],
   "engines": {
     "node": ">=22.0.0",
@@ -30,39 +28,42 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "build": "tsdown",
+    "build": "echo 'No build step required'",
     "changeset-version": "changeset version",
     "changeset-publish": "changeset publish",
     "format": "biome format . --write",
     "knip": "knip",
-    "lint": "biome lint . --write && eslint . --fix",
+    "lint": "biome lint . --write",
     "prepare": "simple-git-hooks",
     "test": "vitest run",
     "test:cov": "vitest run --coverage"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.1",
     "@changesets/cli": "^2.31.0",
-    "@qingshaner/eslint-config": "^2.0.0",
-    "@types/node": "^26.0.1",
-    "@vitest/coverage-v8": "^4.1.9",
-    "eslint": "^10.6.0",
-    "knip": "^6.21.0",
+    "@types/node": "^26.1.1",
+    "@vitest/coverage-v8": "^4.1.10",
+    "cspell": "^10.0.1",
+    "knip": "^6.26.0",
     "nano-staged": "^1.0.2",
     "simple-git-hooks": "^2.13.1",
-    "tsdown": "^0.22.3",
-    "typescript": "^6.0.3",
-    "vitest": "^4.1.9"
+    "tsdown": "^0.22.7",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm nano-staged",
-    "pre-push": "pnpm test"
+    "pre-push": "pnpm knip"
   },
   "nano-staged": {
-    "*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}": [
-      "pnpm biome lint --write",
-      "pnpm eslint --cache --fix"
-    ],
-    "*.{js,jsx,cjs,mjs,ts,tsx,cts,mts}": "pnpm biome format --write"
+    "*": "pnpm cspell --no-summary --no-progress --no-must-find-files --file-list",
+    "*.{json,jsonc,js,jsx,cjs,mjs,ts,tsx,cts,mts,html,svg,css,vue}": "pnpm biome check --fix --files-ignore-unknown=true --no-errors-on-unmatched"
+  },
+  "peerDependencies": {
+    "@biomejs/biome": "^2.5.3"
+  },
+  "peerDependenciesMeta": {
+    "@biomejs/biome": {
+      "optional": false
+    }
   }
 }
