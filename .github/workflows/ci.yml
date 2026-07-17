@@ -21,8 +21,6 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@6
-        with:
-          version: 11
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v6
