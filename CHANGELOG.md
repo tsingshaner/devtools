@@ -1,5 +1,11 @@
 # @qingshaner/devtools
 
+## 0.0.2
+
+### Patch Changes
+
+- 5750f4a: - Replace the `./config` export with explicit `./tsconfig/base.json`, `./tsconfig/node.json`, and `./tsconfig/app.json` exports.
+
 ## 0.0.1
 
 ### Patch Changes
