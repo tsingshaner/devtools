@@ -1,56 +1,36 @@
 {
   "name": "@qingshaner/devtools",
-  "type": "module",
   "version": "0.0.3",
-  "packageManager": "pnpm@11.0.6",
   "description": "Devtools for qingshaner",
+  "license": "ISC",
   "author": {
     "name": "qingshaner",
     "url": "https://github.com/tsingshaner/devtools"
   },
-  "license": "ISC",
+  "type": "module",
   "exports": {
     "./biome": "./biome.shared.json",
     "./cspell": "./cspell.yaml",
     "./tsconfig/base.json": "./tsconfig/base.json",
     "./tsconfig/node.json": "./tsconfig/node.json",
-    "./tsconfig/app.json": "./tsconfig/app.json"
+    "./tsconfig/react.json": "./tsconfig/react.json",
+    "./tsconfig/web.json": "./tsconfig/web.json"
   },
   "files": [
     "biome.shared.json",
     "cspell.yaml",
     "tsconfig"
   ],
-  "engines": {
-    "node": ">=22.0.0",
-    "pnpm": ">=11.0.0"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
   "scripts": {
     "build": "echo 'No build step required'",
-    "changeset-version": "changeset version",
     "changeset-publish": "changeset publish",
+    "changeset-version": "changeset version",
     "format": "biome format . --write",
     "knip": "knip",
     "lint": "biome lint . --write",
     "prepare": "simple-git-hooks",
     "test": "vitest run --passWithNoTests",
     "test:cov": "vitest run --coverage"
-  },
-  "devDependencies": {
-    "@changesets/cli": "^2.31.1",
-    "@types/node": "^26.1.1",
-    "@vitest/coverage-v8": "^4.1.10",
-    "cspell": "^10.0.1",
-    "knip": "^6.27.0",
-    "nano-staged": "^1.0.2",
-    "simple-git-hooks": "^2.13.1",
-    "tsdown": "^0.22.8",
-    "typescript": "^7.0.2",
-    "vitest": "^4.1.10"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm nano-staged",
@@ -60,12 +40,33 @@
     "*": "pnpm cspell --no-summary --no-progress --no-must-find-files --file-list",
     "*.{json,jsonc,js,jsx,cjs,mjs,ts,tsx,cts,mts,html,svg,css,vue}": "pnpm biome check --fix --files-ignore-unknown=true --no-errors-on-unmatched"
   },
+  "devDependencies": {
+    "@changesets/cli": "^3.0.3",
+    "@types/node": "^26.6.5",
+    "@vitest/coverage-v8": "^5.0.3",
+    "cspell": "^10.3.6",
+    "knip": "^6.41.0",
+    "nano-staged": "^1.0.2",
+    "simple-git-hooks": "^2.14.0",
+    "tsdown": "^0.23.1",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.3"
+  },
   "peerDependencies": {
-    "@biomejs/biome": "^2.5.3"
+    "@biomejs/biome": "^2.5.15"
   },
   "peerDependenciesMeta": {
     "@biomejs/biome": {
       "optional": false
     }
+  },
+  "packageManager": "pnpm@12.11.2",
+  "engines": {
+    "node": ">=24.0.0",
+    "pnpm": ">=11.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }

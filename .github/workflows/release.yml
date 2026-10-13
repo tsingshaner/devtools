@@ -10,6 +10,7 @@ permissions:
   contents: write
   pull-requests: write
   packages: write
+  id-token: write
 
 jobs:
   release:
@@ -26,7 +27,7 @@ jobs:
         uses: pnpm/action-setup@v6
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
@@ -36,14 +37,12 @@ jobs:
 
       - name: Create Release Pull Request
         id: changesets
-        uses: changesets/action@v1
+        uses: changesets/action@v2
         with:
-          commit: 'chore(release): update release & CHANGELOG.md'
-          title: '📦 Update Packages Version'
-          publish: pnpm changeset-publish
-          version: pnpm changeset-version
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore(release): update release & CHANGELOG.md'
+          pr-title: '📦 Update Packages Version'
+          publish-script: pnpm changeset-publish
+          version-script: pnpm changeset-version
 
       - name: CNPM sync the latest published package
         if: steps.changesets.outputs.published == 'true'

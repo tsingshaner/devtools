@@ -1,12 +1,4 @@
 {
   "$schema": "node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": ["./biome.shared.json"],
-  "overrides": [
-    {
-      "assist": {
-        "enabled": false
-      },
-      "includes": ["package.json"]
-    }
-  ]
+  "extends": ["./biome.shared.json"]
 }

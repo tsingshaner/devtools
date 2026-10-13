@@ -10,5 +10,5 @@ export default defineConfig({
   },
   entry: 'src/index.ts',
   format: ['cjs', 'esm'],
-  tsconfig: 'tsconfig/app.json'
+  tsconfig: 'tsconfig/web.json'
 })

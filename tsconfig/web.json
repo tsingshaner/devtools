@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
-    "lib": ["ES2023", "DOM"],
+    "lib": ["ES2025", "DOM"],
     "paths": {
       "@/*": ["../src/*"]
     },
     "resolveJsonModule": true,
     "rootDir": "..",
     "target": "ESNext",
-    "types": ["node"]
+    "types": []
   },
   "extends": "./base.json",
   "include": ["../src", "../test"]
