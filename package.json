@@ -2,6 +2,10 @@
   "name": "@qingshaner/devtools",
   "version": "1.0.0",
   "description": "Devtools for qingshaner",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsingshaner/devtools"
+  },
   "license": "ISC",
   "author": {
     "name": "qingshaner",
