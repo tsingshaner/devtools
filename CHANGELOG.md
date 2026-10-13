@@ -1,5 +1,11 @@
 # @qingshaner/devtools
 
+## 1.0.1
+
+### Patch Changes
+
+- af9335e: Update package config
+
 ## 1.0.0
 
 ### Major Changes
