@@ -1,5 +1,5 @@
 {
-  "$schema": "node_modules/@biomejs/biome/configuration_schema.json",
+  "$schema": "../node_modules/@biomejs/biome/configuration_schema.json",
   "assist": {
     "actions": {
       "source": {
@@ -124,7 +124,6 @@
       },
       "nursery": {
         "noRestrictedDependencies": "error",
-        "noUndeclaredClasses": "warn",
         "noUnusedClasses": "warn",
         "useSortedClasses": "error"
       },

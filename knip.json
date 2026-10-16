@@ -1,4 +1,6 @@
 {
-  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "$schema": "node_modules/knip/schema.json",
+  "oxfmt": true,
+  "oxlint": true,
   "tags": ["-lintignore"]
 }

@@ -13,7 +13,10 @@
   },
   "type": "module",
   "exports": {
-    "./biome": "./biome.shared.json",
+    "./biome": "./biome-manifest.json",
+    "./biome-legacy": "./configs/recommended.json",
+    "./oxfmt": "./oxfmt.config.ts",
+    "./oxlint": "./oxlint.config.ts",
     "./cspell": "./cspell.yaml",
     "./tsconfig/base.json": "./tsconfig/base.json",
     "./tsconfig/node.json": "./tsconfig/node.json",
@@ -21,7 +24,10 @@
     "./tsconfig/web.json": "./tsconfig/web.json"
   },
   "files": [
-    "biome.shared.json",
+    "biome-manifest.json",
+    "oxfmt.config.ts",
+    "oxlint.config.ts",
+    "configs",
     "cspell.yaml",
     "tsconfig"
   ],
@@ -29,9 +35,8 @@
     "build": "echo 'No build step required'",
     "changeset-publish": "changeset publish",
     "changeset-version": "changeset version",
-    "format": "biome format . --write",
+    "check": "biome check . --write",
     "knip": "knip",
-    "lint": "biome lint . --write",
     "prepare": "simple-git-hooks",
     "test": "vitest run --passWithNoTests",
     "test:cov": "vitest run --coverage"
@@ -51,6 +56,8 @@
     "cspell": "^10.3.6",
     "knip": "^6.41.0",
     "nano-staged": "^1.0.2",
+    "oxfmt": "^0.73.0",
+    "oxlint": "^1.88.0",
     "simple-git-hooks": "^2.14.0",
     "tsdown": "^0.23.1",
     "typescript": "^7.0.2",

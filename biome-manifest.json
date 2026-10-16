@@ -1,0 +1,4 @@
+{
+  "configs": [{ "recommended": "./configs/recommended.json" }],
+  "version": 1
+}
