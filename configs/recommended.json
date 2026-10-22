@@ -125,7 +125,9 @@
       "nursery": {
         "noRestrictedDependencies": "error",
         "noUnusedClasses": "warn",
-        "useSortedClasses": "error"
+        "useTailwindShorthandClasses": "error",
+        "useTailwindSortedClasses": "error",
+        "useTailwindStaticClassStrings": "error"
       },
       "preset": "recommended",
       "style": {
